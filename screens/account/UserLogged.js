@@ -7,6 +7,7 @@ import Toast from 'react-native-easy-toast'
 import { closeSession, getCurrenUser } from '../../utils/actions'
 import Loading from '../../components/Loading'
 import InfoUser from '../../components/Account/InfoUser'
+import AccountOptions from '../../components/Account/AccountOptions'
 
 export default function UserLogged() {
     const toastRef = useRef()
@@ -30,7 +31,12 @@ export default function UserLogged() {
                             setLoading={setLoading}
                             setLoadingText={setLoadingText}
                         />
-                        <Text>Account Options</Text>
+                        <AccountOptions
+                            user={user}
+                            toastRef={toastRef}
+                            setLoading={setLoading}
+                            setLoadingText={setLoadingText}
+                            />                        
                     </View>
                 )
             }
